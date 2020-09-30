@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { Store } from "./store/Store";
+import { Store } from "../store/Store";
+import "./EpisodeCard.css";
 
 interface IEpisode {
   airdate: string;
@@ -17,10 +18,10 @@ interface IEpisode {
 const EpisodeCard = () => {
   const { state } = useContext(Store);
   return (
-    <section>
+    <section className="episodes">
       {state.episodes.map((episode: IEpisode) => {
         return (
-          <section key={episode.id}>
+          <section className="episode" key={episode.id}>
             <img
               src={episode.image.medium}
               alt={`Rick and Mort: ${episode.name}`}
