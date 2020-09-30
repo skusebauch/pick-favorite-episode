@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Store } from "./store/Store";
+import EpisodeCard from "./EpisodeCard";
 
 import "./App.css";
 
@@ -25,6 +26,7 @@ function App(): JSX.Element {
     <div className="App">
       <h1>Rick and Morty</h1>
       <p>Pick your favorite episode</p>
+      <EpisodeCard />
     </div>
   );
 }
