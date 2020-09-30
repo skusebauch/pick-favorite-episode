@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Store } from "./store/Store";
-import { IEpisode, IAction } from "./interfaces/interfaces";
+import { IAction } from "./interfaces/interfaces";
 import EpisodeCard from "./components/EpisodeCard";
 
 import "./App.css";

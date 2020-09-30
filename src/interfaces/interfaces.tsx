@@ -15,8 +15,8 @@ export interface IEpisode {
 }
 
 export interface IState {
-  episodes: IEpisode[];
-  favourites: {}[];
+  episodes: Array<IEpisode>;
+  favourites: Array<any>;
 }
 
 export interface IAction {

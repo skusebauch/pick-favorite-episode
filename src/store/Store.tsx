@@ -9,6 +9,7 @@ const initialState: IState = {
 export const Store = createContext<IState | any>(initialState);
 
 const reducer = (state: IState, action: IAction): IState => {
+  console.log(action);
   switch (action.type) {
     case "FETCH_DATA":
       return {
@@ -18,7 +19,7 @@ const reducer = (state: IState, action: IAction): IState => {
     case "ADD_FAV":
       return {
         ...state,
-        favourites: [...state.favourites, action.payload],
+        favourites: [action.payload, ...state.favourites],
       };
 
     default:
