@@ -1,11 +1,11 @@
-.episodes {
+.episode__container {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   margin: 10px;
 }
 
-.episode {
+.episode__card {
   display: flex;
   flex-direction: column;
   align-items: center;

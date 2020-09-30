@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Store } from "./store/Store";
+import { IEpisode, IAction } from "./interfaces/interfaces";
 import EpisodeCard from "./components/EpisodeCard";
 
 import "./App.css";
@@ -11,7 +12,7 @@ function App(): JSX.Element {
     state.episodes.length === 0 && fetchDataAction();
   });
 
-  const fetchDataAction = async () => {
+  const fetchDataAction = async (): Promise<IAction> => {
     console.log("need to fetch due to current state 0");
     const URL = `https://api.tvmaze.com/singlesearch/shows?q=rick-&-morty&embed=episodes`;
     const data = await fetch(URL);
