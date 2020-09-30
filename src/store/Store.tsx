@@ -21,6 +21,11 @@ const reducer = (state: IState, action: IAction): IState => {
         ...state,
         favourites: [action.payload, ...state.favourites],
       };
+    case "REMOVE_FAV":
+      return {
+        ...state,
+        favourites: action.payload,
+      };
 
     default:
       return state;

@@ -7,10 +7,22 @@ const EpisodeCard = () => {
   const { state, dispatch } = useContext(Store);
 
   const toggleFavAction = (episode: IEpisode): IAction => {
-    return dispatch({
+    const episodeInFav: boolean = state.favourites.includes(episode);
+    let dispatchObj = {
       type: "ADD_FAV",
       payload: episode,
-    });
+    };
+    if (episodeInFav) {
+      const favWithoutEpispode = state.favourites.filter(
+        (fav: IEpisode) => fav.id !== episode.id
+      );
+      dispatchObj = {
+        type: "REMOVE_FAV",
+        payload: favWithoutEpispode,
+      };
+    }
+
+    return dispatch(dispatchObj);
   };
   return (
     <section className="episode__container">
@@ -27,7 +39,9 @@ const EpisodeCard = () => {
                 Season: {episode.season} Number: {episode.number}
               </div>
               <button type="button" onClick={() => toggleFavAction(episode)}>
-                Fav
+                {state.favourites.find((fav: IEpisode) => fav.id === episode.id)
+                  ? "unfav"
+                  : "fav"}
               </button>
             </section>
           </section>
