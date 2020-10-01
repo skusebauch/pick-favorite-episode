@@ -14,9 +14,13 @@ export interface IEpisode {
   url: string;
 }
 
+export interface IFavourites {
+  //placeholders
+}
+
 export interface IState {
-  episodes: Array<IEpisode>;
-  favourites: Array<any>;
+  episodes: IEpisode[];
+  favourites: any[];
 }
 
 export interface IAction {

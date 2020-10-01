@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Store } from "./store/Store";
 import { IAction } from "./interfaces/interfaces";
-import EpisodeCard from "./components/EpisodeCard";
+import Home from "./pages/Home";
 
 import "./App.css";
 
@@ -25,9 +25,7 @@ function App(): JSX.Element {
   console.log(state);
   return (
     <div className="App">
-      <h1>Rick and Morty</h1>
-      <p>Pick your favorite episode</p>
-      <EpisodeCard />
+      <Home />
     </div>
   );
 }
